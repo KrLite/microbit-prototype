@@ -1,11 +1,45 @@
 input.onButtonPressed(Button.A, onButtonPressedA)
 input.onButtonPressed(Button.B, onButtonPressedB)
 
-function onButtonPressedA() {
+let lastTweaked: Button
 
-    images.createImage('0100010000').plotFrame(1)
+let image: Image
+let direction: number
+
+basic.forever(function () {
+    if (image && direction) {
+        image.scrollImage(direction, 50)
+    }
+})
+
+function onButtonPressedA() {
+    if (image && lastTweaked === Button.A) {
+        image = undefined
+    } else {
+        image = images.createImage(`
+        ..... #..
+        ..... .#.
+        ..... ..#
+        ..... .#.
+        ..... #..
+        `)
+        direction = -1
+    }
+    lastTweaked = Button.A
 }
 
 function onButtonPressedB() {
-    images.createImage('0100010000').plotFrame(0)
+    if (image && lastTweaked === Button.B) {
+        image = undefined
+    } else {
+        image = images.createImage(`
+        ..# .....
+        .#. .....
+        #.. .....
+        .#. .....
+        ..# .....
+        `)
+        direction = 1
+    }
+    lastTweaked = Button.B
 }
