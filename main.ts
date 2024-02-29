@@ -4,5 +4,5 @@ basic.forever(function () {
 
 function onButtonPressedA() {
     
-    basic.showAnimation("1000001000\n0100000100\n0010000010\n0001000001\n0000110000")
+    images.createImage('01000').plotFrame(0)
 }
