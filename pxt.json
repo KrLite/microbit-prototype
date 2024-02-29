@@ -1,5 +1,5 @@
 {
-    "name": "MicrobitPrototype1",
+    "name": "MicrobitPrototype",
     "description": "",
     "dependencies": {
         "core": "*",
