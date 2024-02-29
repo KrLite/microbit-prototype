@@ -17,13 +17,13 @@ function onButtonPressedA() {
         image = undefined
     } else {
         image = images.createImage(`
-        ..... #..
-        ..... .#.
-        ..... ..#
-        ..... .#.
-        ..... #..
+        ..## .....
+        .##. .....
+        ##.. .....
+        .##. .....
+        ..## .....
         `)
-        direction = -1
+        direction = 1
     }
     lastTweaked = Button.A
 }
@@ -33,13 +33,13 @@ function onButtonPressedB() {
         image = undefined
     } else {
         image = images.createImage(`
-        ..# .....
-        .#. .....
-        #.. .....
-        .#. .....
-        ..# .....
+        ..... ##..
+        ..... .##.
+        ..... ..##
+        ..... .##.
+        ..... ##..
         `)
-        direction = 1
+        direction = -1
     }
     lastTweaked = Button.B
 }
