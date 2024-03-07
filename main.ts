@@ -1,45 +1,32 @@
 input.onButtonPressed(Button.A, onButtonPressedA)
 input.onButtonPressed(Button.B, onButtonPressedB)
+input.onButtonPressed(Button.AB, onButtonPressedAB)
 
 let lastTweaked: Button
 
-let image: Image
-let direction: number
-
-basic.forever(function () {
-    if (image && direction) {
-        image.scrollImage(direction, 50)
-    }
-})
-
 function onButtonPressedA() {
-    if (image && lastTweaked === Button.A) {
-        image = undefined
+    if (lastTweaked === Button.A) {
+        basic.clearScreen()
     } else {
-        image = images.createImage(`
-        ..## .....
-        .##. .....
-        ##.. .....
-        .##. .....
-        ..## .....
-        `)
-        direction = 1
+        basic.showArrow(ArrowNames.West)
     }
     lastTweaked = Button.A
 }
 
 function onButtonPressedB() {
-    if (image && lastTweaked === Button.B) {
-        image = undefined
+    if (lastTweaked === Button.B) {
+        basic.clearScreen()
     } else {
-        image = images.createImage(`
-        ..... ##..
-        ..... .##.
-        ..... ..##
-        ..... .##.
-        ..... ##..
-        `)
-        direction = -1
+        basic.showArrow(ArrowNames.East)
     }
     lastTweaked = Button.B
+}
+
+function onButtonPressedAB() {
+    if (lastTweaked === Button.AB) {
+        basic.clearScreen()
+    } else {
+        basic.showIcon(IconNames.Square)
+    }
+    lastTweaked = Button.AB
 }
