@@ -30,3 +30,11 @@ function onButtonPressedAB() {
     }
     lastTweaked = Button.AB
 }
+
+let np = neopixel.create(DigitalPin.P2, 15, NeoPixelMode.RGB)
+let offset = 0
+
+basic.forever(function() {
+    np.showRainbow(0, 255)
+    np.rotate()
+})
